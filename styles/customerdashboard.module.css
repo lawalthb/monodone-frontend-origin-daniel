@@ -1,0 +1,191 @@
+.hov {
+  cursor: pointer;
+}
+
+.hov:hover {
+  color: green;
+  font-weight: 600;
+}
+
+.tableContainer {
+  /* border: 1px solid #e7e7e7; */
+  margin: 24px;
+  padding: 24px;
+}
+
+.tablehead {
+  font-weight: bold;
+  color: #343f42;
+  margin-top: -20px;
+}
+
+.table .thead {
+  border-radius: 7px;
+}
+
+.image {
+  border-radius: 32px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  margin: 12px;
+}
+
+.iconPadding {
+  padding: 8px;
+}
+
+.docIcon {
+  color: brown;
+}
+
+.options {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.buttonIcons {
+  margin: 8px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex_between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ml_twenty {
+  margin-left: 20px;
+}
+
+.ml_sixteen {
+  margin-left: 16px;
+}
+
+.middleButton {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.alignCenter {
+  vertical-align: middle;
+}
+
+.basis {
+  flex-basis: 46%;
+}
+
+.tableBody :global td {
+  vertical-align: middle;
+}
+
+.modal {
+  padding: 16px;
+  max-width: "40px" !important;
+}
+
+.w_600 {
+  max-width: 600px;
+}
+
+.dashmodal {
+  display: flex;
+}
+
+.dashmodal li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.packageCost {
+  display: none;
+}
+
+.packageCostDisplay {
+  display: block;
+}
+
+.circle_sm {
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  border: 2px solid rgba(0, 254, 0, 0.7);
+  border-radius: 50%;
+}
+
+.circle_md {
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  border: 2px solid rgba(0, 254, 0, 0.4);
+  border-radius: 50%;
+}
+
+.circle_lg {
+  width: 380px;
+  height: 380px;
+  position: relative;
+  border: 2px solid rgba(0, 254, 0, 0.1);
+  border-radius: 50%;
+}
+
+.circleIcon {
+  top: 35%;
+  left: 35%;
+  width: 30%;
+  height: 30%;
+  color: rgba(0, 255, 0, 1);
+  position: absolute;
+}
+
+.successModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 24px;
+}
+
+.extra:active {
+  border: 1px sold #808080;
+}
+
+.package {
+  accent-color: green;
+}
+
+.viewDriverRequest:hover {
+  font-weight: 400;
+  color: #00902f;
+}
+
+.walletSidebar {
+  background: no-repeat url("../public/img/walletsbbg.png");
+  background-size: cover;
+}
+
+.walletTopContent {
+  background: no-repeat url("../public/img/wallettopcontent.jpg");
+  background-size: cover;
+}
+
+@media screen and (max-width: 600px) {
+  .addmastercard {
+    width: 490px;
+  }
+}
+
+.tooltip {
+  --bs-tooltip-bg: transparent !important;
+  --bs-tooltip-color: #00902f !important;
+  --bs-tooltip-cursor: pointer !important;
+}

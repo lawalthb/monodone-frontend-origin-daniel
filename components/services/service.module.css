@@ -1,0 +1,31 @@
+.sidebarBg {
+  background: no-repeat url('../../public/img/ourservicesidebg.png');
+  background-size: cover;
+}
+.monologSidebar:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.monodomeServicesBg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url('../../public/img/monologwarehousebg.png');
+}
+.monodomeServicesBgtop {
+  /* background: no-repeat url('../../public/img/servicesbg.png'); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url('../../public/img/servicesbg.png');
+}
+.monodomeServicesBgAdjusted {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url('../../public/img/servicesbgadjusted.png');
+  background-size: cover;
+}
+.serviceLink {
+  text-decoration: none;
+}
+.serviceDetailsLink {
+  text-decoration: none;
+}
+.serviceActive {
+  padding-bottom: 1px;
+  border-bottom: 1px solid black;
+}

@@ -1,0 +1,141 @@
+.tablehead{
+    color: rgba(21, 21, 21, 1);
+    font-family: Poppins;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.modal{
+    padding: 16px;
+    max-width: "40px"!important;
+    display: grid;
+    align-content: center;
+    /* justify-content: center; */
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.w_600{
+    max-width: 600px;
+}
+
+.successModal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 24px;
+
+}
+
+.circle_sm{
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    border: 2px solid rgba(0,254,0,0.7);
+    border-radius: 50%;
+}
+
+.circle_md{
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    border: 2px solid rgba(0,254,0,0.4);
+    border-radius: 50%;
+    
+}
+
+.circle_lg{
+    width: 380px;
+    height: 380px;
+    position: relative;
+    border: 2px solid rgba(0,254,0,0.1);
+    border-radius: 50%;
+    
+}
+
+.circleIcon{
+    top: 35%;
+    left: 35%;
+    width: 30%;
+    height: 30%;
+    color: rgba(0,255,0,1);;
+    position: absolute;
+    
+    
+}
+
+.closeModal{
+    cursor: pointer;
+    padding: 1rem;
+    align-self: end;
+}
+
+.modalMsg{
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: rgba(128, 128, 128, 1);
+}
+
+@media screen and (max-width: 768px) {
+
+    .modal{
+        bottom: 0;
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        max-width: none;
+    }
+
+    .modal > div{
+        border: 0;
+        border-radius: 7px 7px 0 0;
+        width: 90%;
+        margin: auto;
+    }
+
+    .successModal{
+        margin: 24px 0;
+    }
+
+    .tablehead{
+        font-size: 22px;
+    }
+
+    .circle_lg{
+        width: 165px;
+        height: 165px;
+    }
+
+    .circle_md{
+        top: 11%;
+        left: 11%;
+        width: 127.89px;
+        height: 127.89px;
+    }
+
+    .circle_sm{
+        top: 13%;
+        left: 13%;
+        width: 92.78px;
+        height: 92.78px;
+    }
+
+    .modalMsg{
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+    }
+}

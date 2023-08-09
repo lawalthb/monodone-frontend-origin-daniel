@@ -1,0 +1,17 @@
+export const adminpanelInfo = {
+    agentNo: "",
+    dateAdded: "",
+    name: "",
+    address: '',
+    phoneNo: "",
+    weight: '',
+    dimensions: '',
+    store: ["/img/storeimg.png", "/img/storeimg2.png"],
+    regDoc: "/img/regdoc.png",
+    guarantorName1: "Ufere Goodnews",
+    guarantorAddress1: "Greenland Estate, Lekki - Lagos",
+    guarantorPhoneNo1: "998 772 26 66",
+    guarantorName2: "Ufere Goodnews",
+    guarantorAddress2: "Greenland Estate, Lekki - Lagos",
+    guarantorPhoneNo2: "998 772 26 66",
+}

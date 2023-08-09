@@ -1,0 +1,171 @@
+/*-------------------------------------------------------------------
+                                NAVBAR STYLES
+--------------------------------------------------------------------*/
+.navcomp {
+  height: 67px;
+  min-height: 67px;
+  max-height: 67px;
+}
+.btn {
+  outline: none !important;
+  display: none;
+}
+@media (max-width: 1200px) {
+  .btn {
+    display: block;
+    margin-left: -30px;
+  }
+}
+
+/* --------------------------------------------------------------------
+                               SIDEBAR STYLES                           
+----------------------------------------------------------------------*/
+.heading {
+  font-size: 105%;
+  color: rgb(5, 0, 0);
+  font-weight: 600;
+  line-height: 2em;
+  margin: 0.1em 0 0.75em;
+}
+.sidebar {
+  background: #f9f9f9;
+  width: 20%;
+  min-width: 20%;
+  min-height: 100vh;
+  max-width: 270px;
+  max-height: 100vh;
+  z-index: 1000;
+  background-color: var(--bs-gray-100);
+  box-shadow: 10px 10px 10px #eeeeee;
+  transition: width 0.4s;
+  margin-left: 0;
+  overflow: hidden;
+  position: fixed !important;
+  top: 4.125em;
+  left: 0;
+}
+
+.container {
+  width: 100%;
+}
+
+.icon {
+  background: var(--weed-gradient);
+  color: #f9f9f9;
+  width: calc(100% - 74.5vw);
+}
+.iconMin {
+  background: var(--weed-gradient);
+  color: #f9f9f9;
+}
+
+.ul {
+  list-style-type: none;
+  margin: auto 0;
+  padding: 0;
+}
+.sideLink {
+  margin: 1.25em 0;
+}
+
+.active_link {
+  color: var(--weed) !important;
+  border-left: 3px solid var(--weed) !important;
+}
+
+.sideLink:hover {
+  color: var(--weed);
+}
+.nav_link {
+  color: #000;
+  font-size: 110%;
+  padding: 0.25rem 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sidebarClose {
+  visibility: hidden;
+  margin-left: -20%;
+  transition: margin-left 0.4s;
+}
+
+.overflowY {
+  overflow-y: auto;
+}
+
+.main {
+  background: #ffffff !important;
+  padding-top: 2.5%;
+  min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+}
+
+.navbar_brand {
+  background: linear-gradient(90deg, #00902f 0%, #7cc427 99.69%);
+  color: #fefefe;
+  height: 65px;
+  display: flex;
+  /* justify-content: center !important; */
+  align-items: center !important;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 15%;
+  width: 90%;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 45%;
+    background-color: var(--bs-gray-100);
+    transition: 0.5s ease-in;
+    margin-left: 0;
+    overflow-y: hidden;
+  }
+  .icon {
+    display: none;
+  }
+
+  .main {
+    margin-left: 0;
+  }
+}
+
+/*-------------------------------------------------
+                    PROFILE PAGE
+---------------------------------------------------*/
+
+.profile_card {
+  width: 65%;
+}
+
+@media screen and (max-width: 768px) {
+  .profile_card {
+    width: 100%;
+  }
+}
+.ul {
+  padding: 0;
+  margin: 0;
+}
+.clearingMessageInput::placeholder {
+  font-family: "Poppins";
+  font-style: normal;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.messegeDiv:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+.inputMessage::placeholder {
+  font-size: 10px;
+}

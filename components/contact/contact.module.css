@@ -1,0 +1,5 @@
+.contactBg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url('../../public/img/servicesbg.png');
+  background-size: cover;
+}

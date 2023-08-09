@@ -1,0 +1,11 @@
+.modal {
+  padding: 16px;
+  max-width: '40px' !important;
+}
+.successModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 24px;
+}

@@ -1,0 +1,12 @@
+.homeBgDesktop {
+  background: no-repeat url('../../public/img/bgtop.jpeg');
+  background-size: cover;
+}
+.homeBgMobile {
+  background: no-repeat url('../../public/img/bgtop.jpeg');
+  background-size: cover;
+}
+.monodomeappFeatures {
+  background: no-repeat url('../../public/img/bgtop.jpeg');
+  background-size: cover;
+}

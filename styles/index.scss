@@ -1,0 +1,142 @@
+// COLORS
+$color-quotation: #808080;
+$background-button: #00902F;
+
+// VIEW QUOTATION PAGE
+
+// tabletAndDesktop
+.view-quotation-page {
+    width: 100%;
+    padding: 4em;
+    .quotation-info {
+        display: flex;
+        padding-bottom: 3em;
+        gap: 2.5em;
+        .address-img {
+            width: 100%;
+            height: 100%;
+            .address-map {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .quotation-details {
+            width: 100%;
+            td {
+                color: $color-quotation;
+            }
+        }
+    }
+    .assign-driver {
+        .assign-details {
+            tr {
+                width: 100%;
+                td {
+                    vertical-align: middle;  
+                    padding: 1.5em 0 1em;                  
+                }
+                .button {
+                    margin-left: 5em;
+                    text-align: end;
+                    width: 16em;
+                    button {        
+                        width: 100%;                
+                        height: 2.5em;
+                        background-color: $background-button;
+                        color: white;
+                        border: none;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+// mobile
+.view-quotation-page-mobile {
+    width: 100vw;
+    padding: 1.5em;
+    font-size: 0.75rem;
+    .quotation-info-mobile {
+        .address-img-mobile {
+            width: 100%;
+            .address-map-mobile {
+                width: 100%;
+                height: 60%;
+            }
+        }
+        .quotation-details-mobile {
+            width: 100%;
+            margin: 1.5em 0;
+            td {
+                color: $color-quotation;
+            }
+        }
+    }
+    .assign-driver-mobile {
+        .assign-header-mobile {
+            font-size: 1.15rem;
+        }
+        .assign-details-mobile {
+            font-size: 0.7rem;
+            tr {
+                width: 100%;
+                td {
+                    vertical-align: middle;  
+                    padding: 1.5em 0.5em 1em;                  
+                }
+                .button-mobile {
+                    text-align: end;
+                    width: 6em;
+                    button {        
+                        width: 100%;                
+                        font-size: 0.75rem;
+                        background-color: $background-button;
+                        color: white;
+                        border: none;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// successmodal
+.assign-driver-success {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 20em;
+    .close-modal {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.25rem;
+        :hover {
+            color: red;
+        }
+    }
+    .success-message {
+        .success {
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+        .message {
+            font-size: .9rem;
+        }
+        button {
+            width: 20em;
+            margin-top: 1em;
+            padding: 0.3em;
+            background-color: $background-button;
+            color: white;
+            border: none;
+        }
+    }
+}
+

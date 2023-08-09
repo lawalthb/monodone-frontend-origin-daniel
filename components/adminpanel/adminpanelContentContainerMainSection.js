@@ -1,0 +1,1032 @@
+import { useState, useEffect } from "react";
+import { Form } from "react-bootstrap";
+import AdminpanelAgentList from "./adminpanelAgentList";
+import AdminpanelBrokerList from "./adminpanelBrokerList";
+import AdminpanelContentAgent from "./adminpanelContentAgent";
+import AdminpanelCustomerList from "./adminpanelCustomerList";
+import AdminpanelDriverList from "./adminpanelDriverList";
+import Logout from "./common/logout";
+import GenericManagementComp from "./generic/genericManagementComp";
+
+export default function AdminpanelContentContainerMainSection(props) {
+    const [isBlogRequest, setIsBlogRequest] = useState(false)
+    const [isBrokersManagement, setIsBrokersManagement] = useState(false)
+    const [isBrokersRequest, setIsBrokersRequest] = useState(false)
+    const [isClearingForwardingManagement, setIsClearingForwardingManagement] = useState(false)
+    const [isClearingForwardingRequest, setIsClearingForwardingRequest] = useState(false)
+    const [isDriversManagersManagement, setIsDriversManagersManagement] = useState(false)
+    const [isDriversManagersRequest, setIsDriversManagersRequest] = useState(false)
+    const [isDriversManagement, setIsDriversManagement] = useState(false)
+    const [isDriversRequest, setIsDriversRequest] = useState(false)
+    const [isEmployeesManagement, setIsEmployeesManagement] = useState(false)
+    const [isEmployeesRequest, setIsEmployeesRequest] = useState(false)
+    const [isLoadBoardManagement, setIsLoadBoardManagement] = useState(false)
+    const [isLoadBoardRequest, setIsLoadBoardRequest] = useState(false)
+    const [isShippingCompaniesManagement, setIsShippingCompaniesManagement] = useState(false)
+    const [isShippingCompaniesRequest, setIsShippingCompaniesRequest] = useState(false)
+    const [isTransportCompanyManagement, setIsTransportCompanyManagement] = useState(false)
+    const [isTransportCompanyRequest, setIsTransportCompanyRequest] = useState(false)
+    const [isTransactionCustomers, setIsTransactionCustomers] = useState(false)
+    const [isTransactionAgent, setIsTransactionAgent] = useState(false)
+    const [isTransactionDrivers, setIsTransactionDrivers] = useState(false)
+
+    const [rates, setRates] = useState([])
+    const [rate, setRate] = useState("")
+    const [dates, setDates] = useState([])
+    const [date, setDate] = useState("")
+    const [vehicleTypes, setVehicleTypes] = useState([])
+    const [vehicleType, setVehicleType] = useState("")
+    const [pageNumbers, setPageNumbers] = useState([])
+    const [pageNumber, setPageNumber] = useState()
+    const [activePagenumber, setActivePagenumber] = useState(1)
+    const [citiesFrom, setCitiesFrom] = useState([])
+    const [cityFrom, setCityFrom] = useState("")
+    const [citiesTo, setCitiesTo] = useState([])
+    const [cityTo, setCityTo] = useState("")
+    const [statuses, setStatuses] = useState([])
+    const [status, setStatus] = useState("")
+
+
+    useEffect(() => {
+        if (props.isDrivers) {
+            props.setIsAgents(false)
+            props.setIsCustomers(false)
+            props.setIsBrokers(false)
+            props.setIsDriverManagers(false)
+            props.setIsShippingCompanies(false)
+            props.setIsTransportCompanies(false)
+            props.setIsClearingForwardingAgent(false)
+            props.setIsSpecializedShipment(false)
+            props.setIsEmployee(false)
+            props.setIsWallet(false)
+            props.setIsWebsite(false)
+            props.setIsLoadboard(false)
+            props.setIsBlog(false)
+            props.setIsOrders(false)
+        } else if (props.isCustomers) {
+            props.setIsAgents(false)
+            props.setIsDrivers(false)
+            props.setIsBrokers(false)
+            props.setIsDriverManagers(false)
+            props.setIsShippingCompanies(false)
+            props.setIsTransportCompanies(false)
+            props.setIsClearingForwardingAgent(false)
+            props.setIsSpecializedShipment(false)
+            props.setIsEmployee(false)
+            props.setIsWallet(false)
+            props.setIsWebsite(false)
+            props.setIsLoadboard(false)
+            props.setIsBlog(false)
+            props.setIsOrders(false)
+        } else if (props.isBrokers) {
+            props.setIsAgents(false)
+            props.setIsDrivers(false)
+            props.setIsCustomers(false)
+            props.setIsDriverManagers(false)
+            props.setIsShippingCompanies(false)
+            props.setIsTransportCompanies(false)
+            props.setIsClearingForwardingAgent(false)
+            props.setIsSpecializedShipment(false)
+            props.setIsEmployee(false)
+            props.setIsWallet(false)
+            props.setIsWebsite(false)
+            props.setIsLoadboard(false)
+            props.setIsBlog(false)
+            props.setIsOrders(false)
+        } else if (props.isDriverManagers) {
+            props.setIsAgents(false)
+            props.setIsDrivers(false)
+            props.setIsCustomers(false)
+            props.setIsBrokers(false)
+            props.setIsShippingCompanies(false)
+            props.setIsTransportCompanies(false)
+            props.setIsClearingForwardingAgent(false)
+            props.setIsSpecializedShipment(false)
+            props.setIsEmployee(false)
+            props.setIsWallet(false)
+            props.setIsWebsite(false)
+            props.setIsLoadboard(false)
+            props.setIsBlog(false)
+            props.setIsOrders(false)
+        } else if (props.isShippingCompanies) {
+            props.setIsAgents(false)
+            props.setIsDrivers(false)
+            props.setIsCustomers(false)
+            props.setIsBrokers(false)
+            props.setIsDriverManagers(false)
+            props.setIsTransportCompanies(false)
+            props.setIsClearingForwardingAgent(false)
+            props.setIsSpecializedShipment(false)
+            props.setIsEmployee(false)
+            props.setIsWallet(false)
+            props.setIsWebsite(false)
+            props.setIsLoadboard(false)
+            props.setIsBlog(false)
+            props.setIsOrders(false)
+        } else if (props.isTransportCompanies) {
+            props.setIsAgents(false)
+            props.setIsDrivers(false)
+            props.setIsCustomers(false)
+            props.setIsBrokers(false)
+            props.setIsDriverManagers(false)
+            props.setIsShippingCompanies(false)
+            props.setIsClearingForwardingAgent(false)
+            props.setIsSpecializedShipment(false)
+            props.setIsEmployee(false)
+            props.setIsWallet(false)
+            props.setIsWebsite(false)
+            props.setIsLoadboard(false)
+            props.setIsBlog(false)
+            props.setIsOrders(false)
+        } else if (props.isClearingForwardingAgent) {
+            props.setIsAgents(false)
+            props.setIsDrivers(false)
+            props.setIsCustomers(false)
+            props.setIsBrokers(false)
+            props.setIsDriverManagers(false)
+            props.setIsShippingCompanies(false)
+            props.setIsTransportCompanies(false)
+            props.setIsSpecializedShipment(false)
+            props.setIsEmployee(false)
+            props.setIsWallet(false)
+            props.setIsWebsite(false)
+            props.setIsLoadboard(false)
+            props.setIsBlog(false)
+            props.setIsOrders(false)
+        } else if (props.isSpecializedShipment) {
+            props.setIsAgents(false)
+            props.setIsDrivers(false)
+            props.setIsCustomers(false)
+            props.setIsBrokers(false)
+            props.setIsDriverManagers(false)
+            props.setIsShippingCompanies(false)
+            props.setIsTransportCompanies(false)
+            props.setIsClearingForwardingAgent(false)
+            props.setIsEmployee(false)
+            props.setIsWallet(false)
+            props.setIsWebsite(false)
+            props.setIsLoadboard(false)
+            props.setIsBlog(false)
+            props.setIsOrders(false)
+        } else if (props.isEmployee) {
+            props.setIsAgents(false)
+            props.setIsDrivers(false)
+            props.setIsCustomers(false)
+            props.setIsBrokers(false)
+            props.setIsDriverManagers(false)
+            props.setIsShippingCompanies(false)
+            props.setIsTransportCompanies(false)
+            props.setIsClearingForwardingAgent(false)
+            props.setIsSpecializedShipment(false)
+            props.setIsWallet(false)
+            props.setIsWebsite(false)
+            props.setIsLoadboard(false)
+            props.setIsBlog(false)
+            props.setIsOrders(false)
+        } else if (props.isWallet) {
+            props.setIsAgents(false)
+            props.setIsDrivers(false)
+            props.setIsCustomers(false)
+            props.setIsBrokers(false)
+            props.setIsDriverManagers(false)
+            props.setIsShippingCompanies(false)
+            props.setIsTransportCompanies(false)
+            props.setIsClearingForwardingAgent(false)
+            props.setIsSpecializedShipment(false)
+            props.setIsEmployee(false)
+            props.setIsWebsite(false)
+            props.setIsLoadboard(false)
+            props.setIsBlog(false)
+            props.setIsOrders(false)
+        } else if (props.isWebsite) {
+            props.setIsAgents(false)
+            props.setIsDrivers(false)
+            props.setIsCustomers(false)
+            props.setIsBrokers(false)
+            props.setIsDriverManagers(false)
+            props.setIsShippingCompanies(false)
+            props.setIsTransportCompanies(false)
+            props.setIsClearingForwardingAgent(false)
+            props.setIsSpecializedShipment(false)
+            props.setIsEmployee(false)
+            props.setIsWallet(false)
+            props.setIsLoadboard(false)
+            props.setIsBlog(false)
+            props.setIsOrders(false)
+        } else if (props.isLoadboard) {
+            props.setIsAgents(false)
+            props.setIsDrivers(false)
+            props.setIsCustomers(false)
+            props.setIsBrokers(false)
+            props.setIsDriverManagers(false)
+            props.setIsShippingCompanies(false)
+            props.setIsTransportCompanies(false)
+            props.setIsClearingForwardingAgent(false)
+            props.setIsSpecializedShipment(false)
+            props.setIsEmployee(false)
+            props.setIsWallet(false)
+            props.setIsWebsite(false)
+            props.setIsBlog(false)
+            props.setIsOrders(false)
+        } else if (props.isBlog) {
+            props.setIsAgents(false)
+            props.setIsDrivers(false)
+            props.setIsCustomers(false)
+            props.setIsBrokers(false)
+            props.setIsDriverManagers(false)
+            props.setIsShippingCompanies(false)
+            props.setIsTransportCompanies(false)
+            props.setIsClearingForwardingAgent(false)
+            props.setIsSpecializedShipment(false)
+            props.setIsEmployee(false)
+            props.setIsWallet(false)
+            props.setIsWebsite(false)
+            props.setIsLoadboard(false)
+            props.setIsOrders(false)
+        } else if (props.isOrders) {
+            props.setIsAgents(false)
+            props.setIsDrivers(false)
+            props.setIsCustomers(false)
+            props.setIsBrokers(false)
+            props.setIsDriverManagers(false)
+            props.setIsShippingCompanies(false)
+            props.setIsTransportCompanies(false)
+            props.setIsClearingForwardingAgent(false)
+            props.setIsSpecializedShipment(false)
+            props.setIsEmployee(false)
+            props.setIsWallet(false)
+            props.setIsWebsite(false)
+            props.setIsLoadboard(false)
+            props.setIsBlog(false)
+        } else {
+            props.setIsAgents(true)
+        }
+    }, [props])
+    return (
+        <>
+            {props.isAgents && (
+                <AdminpanelContentAgent
+                    setBackdrop={props.setBackdrop}
+                    backdrop={props.backdrop}
+                    adminAgentData={props.adminAgentData}
+                    isAgentManagement={props.isAgentManagement}
+                    setIsAgentManagement={props.setIsAgentManagement}
+                    isAgentRequest={props.isAgentRequest}
+                    setIsAgentRequest={props.setIsAgentRequest}
+                    handleIsAgentManagement={props.handleIsAgentManagement}
+                    handleIsAgentRequest={props.handleIsAgentRequest}
+                    agentList={props.agentList}
+                    setAgentList={props.setAgentList}
+                    handleAgentList={props.handleAgentList}
+                    editAgentForm={props.editAgentForm}
+                    setEditAgentForm={props.setEditAgentForm}
+                />
+            )}
+
+            <GenericManagementComp
+                isDrivers={props.isDrivers}
+                adminAgentData={props.adminAgentData}
+                isDriversManagement={isDriversManagement}
+                setIsDriversManagement={setIsDriversManagement}
+                isDriversRequest={isDriversRequest}
+                setIsDriversRequest={setIsDriversRequest}
+                setAdminAgentData={props.setAdminAgentData}
+                driverList={props.driverList}
+                setDriverList={props.setDriverList}
+                handleDriverList={props.handleDriverList}
+
+                rates={rates}
+                setRates={setRates}
+                rate={rate}
+                setRate={setRate}
+                dates={dates}
+                setDates={setDates}
+                date={date}
+                setDate={setDate}
+                vehicleTypes={vehicleTypes}
+                setVehicleTypes={setVehicleTypes}
+                vehicleType={vehicleType}
+                setVehicleType={setVehicleType}
+                pageNumbers={pageNumbers}
+                setPageNumbers={setPageNumbers}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+                activePagenumber={activePagenumber}
+                setActivePagenumber={setActivePagenumber}
+                citiesFrom={citiesFrom}
+                setCitiesFrom={setCitiesFrom}
+                cityFrom={cityFrom}
+                setCityFrom={setCityFrom}
+                citiesTo={citiesTo}
+                setCitiesTo={setCitiesTo}
+                cityTo={cityTo}
+                setCityTo={setCityTo}
+                statuses={statuses}
+                setStatuses={setStatuses}
+                status={status}
+                setStatus={setStatus}
+            />
+            <GenericManagementComp
+                isCustomers={props.isCustomers}
+                adminAgentData={props.adminAgentData}
+                customerList={props.customerList}
+                setCustomerList={props.setCustomerList}
+                handleCustomerList={props.handleCustomerList}
+
+                rates={rates}
+                setRates={setRates}
+                rate={rate}
+                setRate={setRate}
+                dates={dates}
+                setDates={setDates}
+                date={date}
+                setDate={setDate}
+                vehicleTypes={vehicleTypes}
+                setVehicleTypes={setVehicleTypes}
+                vehicleType={vehicleType}
+                setVehicleType={setVehicleType}
+                pageNumbers={pageNumbers}
+                setPageNumbers={setPageNumbers}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+                activePagenumber={activePagenumber}
+                setActivePagenumber={setActivePagenumber}
+                citiesFrom={citiesFrom}
+                setCitiesFrom={setCitiesFrom}
+                cityFrom={cityFrom}
+                setCityFrom={setCityFrom}
+                citiesTo={citiesTo}
+                setCitiesTo={setCitiesTo}
+                cityTo={cityTo}
+                setCityTo={setCityTo}
+                statuses={statuses}
+                setStatuses={setStatuses}
+                status={status}
+                setStatus={setStatus}
+            />
+            <GenericManagementComp
+                isBrokers={props.isBrokers}
+                adminAgentData={props.adminAgentData}
+                isBrokersManagement={isBrokersManagement}
+                setIsBrokersManagement={setIsBrokersManagement}
+                isBrokersRequest={isBrokersRequest}
+                setIsBrokersRequest={setIsBrokersRequest}
+                brokerList={props.brokerList}
+                setBrokerList={props.setBrokerList}
+                handleBrokerList={props.handleBrokerList}
+
+                rates={rates}
+                setRates={setRates}
+                rate={rate}
+                setRate={setRate}
+                dates={dates}
+                setDates={setDates}
+                date={date}
+                setDate={setDate}
+                vehicleTypes={vehicleTypes}
+                setVehicleTypes={setVehicleTypes}
+                vehicleType={vehicleType}
+                setVehicleType={setVehicleType}
+                pageNumbers={pageNumbers}
+                setPageNumbers={setPageNumbers}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+                activePagenumber={activePagenumber}
+                setActivePagenumber={setActivePagenumber}
+                citiesFrom={citiesFrom}
+                setCitiesFrom={setCitiesFrom}
+                cityFrom={cityFrom}
+                setCityFrom={setCityFrom}
+                citiesTo={citiesTo}
+                setCitiesTo={setCitiesTo}
+                cityTo={cityTo}
+                setCityTo={setCityTo}
+                statuses={statuses}
+                setStatuses={setStatuses}
+                status={status}
+                setStatus={setStatus}
+            />
+            <GenericManagementComp
+                isDriverManagers={props.isDriverManagers}
+                adminAgentData={props.adminAgentData}
+                isDriversManagersManagement={isDriversManagersManagement}
+                setIsDriversManagersManagement={setIsDriversManagersManagement}
+                isDriversManagersRequest={isDriversManagersRequest}
+                setIsDriversManagersRequest={setIsDriversManagersRequest}
+
+                rates={rates}
+                setRates={setRates}
+                rate={rate}
+                setRate={setRate}
+                dates={dates}
+                setDates={setDates}
+                date={date}
+                setDate={setDate}
+                vehicleTypes={vehicleTypes}
+                setVehicleTypes={setVehicleTypes}
+                vehicleType={vehicleType}
+                setVehicleType={setVehicleType}
+                pageNumbers={pageNumbers}
+                setPageNumbers={setPageNumbers}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+                activePagenumber={activePagenumber}
+                setActivePagenumber={setActivePagenumber}
+                citiesFrom={citiesFrom}
+                setCitiesFrom={setCitiesFrom}
+                cityFrom={cityFrom}
+                setCityFrom={setCityFrom}
+                citiesTo={citiesTo}
+                setCitiesTo={setCitiesTo}
+                cityTo={cityTo}
+                setCityTo={setCityTo}
+                statuses={statuses}
+                setStatuses={setStatuses}
+                status={status}
+                setStatus={setStatus}
+            />
+            <GenericManagementComp
+                isShippingCompanies={props.isShippingCompanies}
+                adminAgentData={props.adminAgentData}
+                isShippingCompaniesManagement={isShippingCompaniesManagement}
+                setIsShippingCompaniesManagement={setIsShippingCompaniesManagement}
+                isShippingCompaniesRequest={isShippingCompaniesRequest}
+                setIsShippingCompaniesRequest={setIsShippingCompaniesRequest}
+
+                rates={rates}
+                setRates={setRates}
+                rate={rate}
+                setRate={setRate}
+                dates={dates}
+                setDates={setDates}
+                date={date}
+                setDate={setDate}
+                vehicleTypes={vehicleTypes}
+                setVehicleTypes={setVehicleTypes}
+                vehicleType={vehicleType}
+                setVehicleType={setVehicleType}
+                pageNumbers={pageNumbers}
+                setPageNumbers={setPageNumbers}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+                activePagenumber={activePagenumber}
+                setActivePagenumber={setActivePagenumber}
+                citiesFrom={citiesFrom}
+                setCitiesFrom={setCitiesFrom}
+                cityFrom={cityFrom}
+                setCityFrom={setCityFrom}
+                citiesTo={citiesTo}
+                setCitiesTo={setCitiesTo}
+                cityTo={cityTo}
+                setCityTo={setCityTo}
+                statuses={statuses}
+                setStatuses={setStatuses}
+                status={status}
+                setStatus={setStatus}
+            />
+            <GenericManagementComp
+                isTransportCompanies={props.isTransportCompanies}
+                adminAgentData={props.adminAgentData}
+                isTransportCompanyManagement={isTransportCompanyManagement}
+                setIsTransportCompanyManagement={setIsTransportCompanyManagement}
+                isTransportCompanyRequest={isTransportCompanyRequest}
+                setIsTransportCompanyRequest={setIsTransportCompanyRequest}
+
+                rates={rates}
+                setRates={setRates}
+                rate={rate}
+                setRate={setRate}
+                dates={dates}
+                setDates={setDates}
+                date={date}
+                setDate={setDate}
+                vehicleTypes={vehicleTypes}
+                setVehicleTypes={setVehicleTypes}
+                vehicleType={vehicleType}
+                setVehicleType={setVehicleType}
+                pageNumbers={pageNumbers}
+                setPageNumbers={setPageNumbers}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+                activePagenumber={activePagenumber}
+                setActivePagenumber={setActivePagenumber}
+                citiesFrom={citiesFrom}
+                setCitiesFrom={setCitiesFrom}
+                cityFrom={cityFrom}
+                setCityFrom={setCityFrom}
+                citiesTo={citiesTo}
+                setCitiesTo={setCitiesTo}
+                cityTo={cityTo}
+                setCityTo={setCityTo}
+                statuses={statuses}
+                setStatuses={setStatuses}
+                status={status}
+                setStatus={setStatus}
+            />
+            <GenericManagementComp
+                isEmployee={props.isEmployee}
+                adminAgentData={props.adminAgentData}
+                isEmployeesManagement={isEmployeesManagement}
+                setIsEmployeesManagement={setIsEmployeesManagement}
+                isEmployeesRequest={isEmployeesRequest}
+                setIsEmployeesRequest={setIsEmployeesRequest}
+
+                rates={rates}
+                setRates={setRates}
+                rate={rate}
+                setRate={setRate}
+                dates={dates}
+                setDates={setDates}
+                date={date}
+                setDate={setDate}
+                vehicleTypes={vehicleTypes}
+                setVehicleTypes={setVehicleTypes}
+                vehicleType={vehicleType}
+                setVehicleType={setVehicleType}
+                pageNumbers={pageNumbers}
+                setPageNumbers={setPageNumbers}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+                activePagenumber={activePagenumber}
+                setActivePagenumber={setActivePagenumber}
+                citiesFrom={citiesFrom}
+                setCitiesFrom={setCitiesFrom}
+                cityFrom={cityFrom}
+                setCityFrom={setCityFrom}
+                citiesTo={citiesTo}
+                setCitiesTo={setCitiesTo}
+                cityTo={cityTo}
+                setCityTo={setCityTo}
+                statuses={statuses}
+                setStatuses={setStatuses}
+                status={status}
+                setStatus={setStatus}
+            />
+            <GenericManagementComp
+                isClearingForwardingAgent={props.isClearingForwardingAgent}
+                adminAgentData={props.adminAgentData}
+                isClearingForwardingManagement={isClearingForwardingManagement}
+                setIsClearingForwardingManagement={setIsClearingForwardingManagement}
+                isClearingForwardingRequest={isClearingForwardingRequest}
+                setIsClearingForwardingRequest={setIsClearingForwardingRequest}
+
+                rates={rates}
+                setRates={setRates}
+                rate={rate}
+                setRate={setRate}
+                dates={dates}
+                setDates={setDates}
+                date={date}
+                setDate={setDate}
+                vehicleTypes={vehicleTypes}
+                setVehicleTypes={setVehicleTypes}
+                vehicleType={vehicleType}
+                setVehicleType={setVehicleType}
+                pageNumbers={pageNumbers}
+                setPageNumbers={setPageNumbers}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+                activePagenumber={activePagenumber}
+                setActivePagenumber={setActivePagenumber}
+                citiesFrom={citiesFrom}
+                setCitiesFrom={setCitiesFrom}
+                cityFrom={cityFrom}
+                setCityFrom={setCityFrom}
+                citiesTo={citiesTo}
+                setCitiesTo={setCitiesTo}
+                cityTo={cityTo}
+                setCityTo={setCityTo}
+                statuses={statuses}
+                setStatuses={setStatuses}
+                status={status}
+                setStatus={setStatus}
+            />
+            <GenericManagementComp
+                isSpecializedShipment={props.isSpecializedShipment}
+                adminAgentData={props.adminAgentData}
+
+                rates={rates}
+                setRates={setRates}
+                rate={rate}
+                setRate={setRate}
+                dates={dates}
+                setDates={setDates}
+                date={date}
+                setDate={setDate}
+                vehicleTypes={vehicleTypes}
+                setVehicleTypes={setVehicleTypes}
+                vehicleType={vehicleType}
+                setVehicleType={setVehicleType}
+                pageNumbers={pageNumbers}
+                setPageNumbers={setPageNumbers}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+                activePagenumber={activePagenumber}
+                setActivePagenumber={setActivePagenumber}
+                citiesFrom={citiesFrom}
+                setCitiesFrom={setCitiesFrom}
+                cityFrom={cityFrom}
+                setCityFrom={setCityFrom}
+                citiesTo={citiesTo}
+                setCitiesTo={setCitiesTo}
+                cityTo={cityTo}
+                setCityTo={setCityTo}
+                statuses={statuses}
+                setStatuses={setStatuses}
+                status={status}
+                setStatus={setStatus}
+            />
+            <GenericManagementComp
+                isWebsite={props.isWebsite}
+                websiteData={props.websiteData}
+                adminAgentData={props.adminAgentData}
+
+                rates={rates}
+                setRates={setRates}
+                rate={rate}
+                setRate={setRate}
+                dates={dates}
+                setDates={setDates}
+                date={date}
+                setDate={setDate}
+                vehicleTypes={vehicleTypes}
+                setVehicleTypes={setVehicleTypes}
+                vehicleType={vehicleType}
+                setVehicleType={setVehicleType}
+                pageNumbers={pageNumbers}
+                setPageNumbers={setPageNumbers}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+                activePagenumber={activePagenumber}
+                setActivePagenumber={setActivePagenumber}
+                citiesFrom={citiesFrom}
+                setCitiesFrom={setCitiesFrom}
+                cityFrom={cityFrom}
+                setCityFrom={setCityFrom}
+                citiesTo={citiesTo}
+                setCitiesTo={setCitiesTo}
+                cityTo={cityTo}
+                setCityTo={setCityTo}
+                statuses={statuses}
+                setStatuses={setStatuses}
+                status={status}
+                setStatus={setStatus}
+            />
+            <GenericManagementComp
+                isBlog={props.isBlog}
+                adminAgentData={props.adminAgentData}
+                isBlogRequest={isBlogRequest}
+                setIsBlogRequest={setIsBlogRequest}
+
+                rates={rates}
+                setRates={setRates}
+                rate={rate}
+                setRate={setRate}
+                dates={dates}
+                setDates={setDates}
+                date={date}
+                setDate={setDate}
+                vehicleTypes={vehicleTypes}
+                setVehicleTypes={setVehicleTypes}
+                vehicleType={vehicleType}
+                setVehicleType={setVehicleType}
+                pageNumbers={pageNumbers}
+                setPageNumbers={setPageNumbers}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+                activePagenumber={activePagenumber}
+                setActivePagenumber={setActivePagenumber}
+                citiesFrom={citiesFrom}
+                setCitiesFrom={setCitiesFrom}
+                cityFrom={cityFrom}
+                setCityFrom={setCityFrom}
+                citiesTo={citiesTo}
+                setCitiesTo={setCitiesTo}
+                cityTo={cityTo}
+                setCityTo={setCityTo}
+                statuses={statuses}
+                setStatuses={setStatuses}
+                status={status}
+                setStatus={setStatus}
+            />
+            <GenericManagementComp
+                isLoadboard={props.isLoadboard}
+                adminAgentData={props.adminAgentData}
+                isLoadBoardManagement={isLoadBoardManagement}
+                setIsLoadBoardManagement={setIsLoadBoardManagement}
+                isLoadBoardRequest={isLoadBoardRequest}
+                setIsLoadBoardRequest={setIsLoadBoardRequest}
+
+                rates={rates}
+                setRates={setRates}
+                rate={rate}
+                setRate={setRate}
+                dates={dates}
+                setDates={setDates}
+                date={date}
+                setDate={setDate}
+                vehicleTypes={vehicleTypes}
+                setVehicleTypes={setVehicleTypes}
+                vehicleType={vehicleType}
+                setVehicleType={setVehicleType}
+                pageNumbers={pageNumbers}
+                setPageNumbers={setPageNumbers}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+                activePagenumber={activePagenumber}
+                setActivePagenumber={setActivePagenumber}
+                citiesFrom={citiesFrom}
+                setCitiesFrom={setCitiesFrom}
+                cityFrom={cityFrom}
+                setCityFrom={setCityFrom}
+                citiesTo={citiesTo}
+                setCitiesTo={setCitiesTo}
+                cityTo={cityTo}
+                setCityTo={setCityTo}
+                statuses={statuses}
+                setStatuses={setStatuses}
+                status={status}
+                setStatus={setStatus}
+            />
+
+            <GenericManagementComp
+                isOrders={props.isOrders}
+                adminAgentData={props.adminAgentData}
+                // customerList={props.customerList}
+                // setCustomerList={props.setCustomerList}
+                // handleCustomerList={props.handleCustomerList}
+
+                rates={rates}
+                setRates={setRates}
+                rate={rate}
+                setRate={setRate}
+                dates={dates}
+                setDates={setDates}
+                date={date}
+                setDate={setDate}
+                vehicleTypes={vehicleTypes}
+                setVehicleTypes={setVehicleTypes}
+                vehicleType={vehicleType}
+                setVehicleType={setVehicleType}
+                pageNumbers={pageNumbers}
+                setPageNumbers={setPageNumbers}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+                activePagenumber={activePagenumber}
+                setActivePagenumber={setActivePagenumber}
+                citiesFrom={citiesFrom}
+                setCitiesFrom={setCitiesFrom}
+                cityFrom={cityFrom}
+                setCityFrom={setCityFrom}
+                citiesTo={citiesTo}
+                setCitiesTo={setCitiesTo}
+                cityTo={cityTo}
+                setCityTo={setCityTo}
+                statuses={statuses}
+                setStatuses={setStatuses}
+                status={status}
+                setStatus={setStatus}
+            />
+            <GenericManagementComp
+                isTransactions={props.isTransactions}
+                adminAgentData={props.adminAgentData}
+                isTransactionCustomers={isTransactionCustomers}
+                setIsTransactionCustomers={setIsTransactionCustomers}
+                isTransactionAgent={isTransactionAgent}
+                setIsTransactionAgent={setIsTransactionAgent}
+                isTransactionDrivers={isTransactionDrivers}
+                setIsTransactionDrivers={setIsTransactionDrivers}
+                // customerList={props.customerList}
+                // setCustomerList={props.setCustomerList}
+                // handleCustomerList={props.handleCustomerList}
+
+                rates={rates}
+                setRates={setRates}
+                rate={rate}
+                setRate={setRate}
+                dates={dates}
+                setDates={setDates}
+                date={date}
+                setDate={setDate}
+                vehicleTypes={vehicleTypes}
+                setVehicleTypes={setVehicleTypes}
+                vehicleType={vehicleType}
+                setVehicleType={setVehicleType}
+                pageNumbers={pageNumbers}
+                setPageNumbers={setPageNumbers}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+                activePagenumber={activePagenumber}
+                setActivePagenumber={setActivePagenumber}
+                citiesFrom={citiesFrom}
+                setCitiesFrom={setCitiesFrom}
+                cityFrom={cityFrom}
+                setCityFrom={setCityFrom}
+                citiesTo={citiesTo}
+                setCitiesTo={setCitiesTo}
+                cityTo={cityTo}
+                setCityTo={setCityTo}
+                statuses={statuses}
+                setStatuses={setStatuses}
+                status={status}
+                setStatus={setStatus}
+            />
+
+            <GenericManagementComp
+                isAdmins={props.isAdmins}
+                adminAgentData={props.adminAgentData}
+                addAdmins={props.addAdmins}
+                setAddAdmins={props.setAddAdmins}
+                adminFullInformation={props.adminFullInformation}
+                setAdminFullInformation={props.setAdminFullInformation}
+                editAdmins={props.editAdmins}
+                setEditAdmins={props.setEditAdmins}
+                resetPassword={props.resetPassword}
+                setResetPasswword={props.setResetPasswword}
+
+                rates={rates}
+                setRates={setRates}
+                rate={rate}
+                setRate={setRate}
+                dates={dates}
+                setDates={setDates}
+                date={date}
+                setDate={setDate}
+                vehicleTypes={vehicleTypes}
+                setVehicleTypes={setVehicleTypes}
+                vehicleType={vehicleType}
+                setVehicleType={setVehicleType}
+                pageNumbers={pageNumbers}
+                setPageNumbers={setPageNumbers}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+                activePagenumber={activePagenumber}
+                setActivePagenumber={setActivePagenumber}
+                citiesFrom={citiesFrom}
+                setCitiesFrom={setCitiesFrom}
+                cityFrom={cityFrom}
+                setCityFrom={setCityFrom}
+                citiesTo={citiesTo}
+                setCitiesTo={setCitiesTo}
+                cityTo={cityTo}
+                setCityTo={setCityTo}
+                statuses={statuses}
+                setStatuses={setStatuses}
+                status={status}
+                setStatus={setStatus}
+            />
+            <GenericManagementComp
+                isPriceSettings={props.isPriceSettings}
+                adminAgentData={props.adminAgentData}
+                addsize={props.addsize}
+                setAddSize={props.setAddSize}
+                editRow={props.editRow}
+                setEditRow={props.setEditRow}
+                deleteColumn={props.deleteColumn}
+                setDeleteColumn={props.setDeleteColumn}
+                addDistance={props.addDistance}
+                setAddDistance={props.setAddDistance}
+                addMiles={props.addMiles}
+                setAddMiles={props.setAddMiles}
+                addValue={props.addValue}
+                setAddValue={props.setAddValue}
+                generalEdit={props.generalEdit}
+                setGeneralEdit={props.setGeneralEdit}
+
+                rates={rates}
+                setRates={setRates}
+                rate={rate}
+                setRate={setRate}
+                dates={dates}
+                setDates={setDates}
+                date={date}
+                setDate={setDate}
+                vehicleTypes={vehicleTypes}
+                setVehicleTypes={setVehicleTypes}
+                vehicleType={vehicleType}
+                setVehicleType={setVehicleType}
+                pageNumbers={pageNumbers}
+                setPageNumbers={setPageNumbers}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+                activePagenumber={activePagenumber}
+                setActivePagenumber={setActivePagenumber}
+                citiesFrom={citiesFrom}
+                setCitiesFrom={setCitiesFrom}
+                cityFrom={cityFrom}
+                setCityFrom={setCityFrom}
+                citiesTo={citiesTo}
+                setCitiesTo={setCitiesTo}
+                cityTo={cityTo}
+                setCityTo={setCityTo}
+                statuses={statuses}
+                setStatuses={setStatuses}
+                status={status}
+                setStatus={setStatus}
+            />
+            <GenericManagementComp
+                isStatistics={props.isStatistics}
+                adminAgentData={props.adminAgentData}
+                setPageNumber={setPageNumber}
+            />
+
+            {props.agentList && (
+                <AdminpanelAgentList
+                    adminAgentData={props.adminAgentData}
+                />
+            )}
+
+            {props.driverList && (
+                <AdminpanelDriverList
+                    adminAgentData={props.adminAgentData}
+                    rates={rates}
+                    setRates={setRates}
+                    rate={rate}
+                    setRate={setRate}
+                    dates={dates}
+                    setDates={setDates}
+                    date={date}
+                    setDate={setDate}
+                    vehicleTypes={vehicleTypes}
+                    setVehicleTypes={setVehicleTypes}
+                    vehicleType={vehicleType}
+                    setVehicleType={setVehicleType}
+                    pageNumbers={pageNumbers}
+                    setPageNumbers={setPageNumbers}
+                    pageNumber={pageNumber}
+                    setPageNumber={setPageNumber}
+                    activePagenumber={activePagenumber}
+                    setActivePagenumber={setActivePagenumber}
+                    citiesFrom={citiesFrom}
+                    setCitiesFrom={setCitiesFrom}
+                    cityFrom={cityFrom}
+                    setCityFrom={setCityFrom}
+                    citiesTo={citiesTo}
+                    setCitiesTo={setCitiesTo}
+                    cityTo={cityTo}
+                    setCityTo={setCityTo}
+                    statuses={statuses}
+                    setStatuses={setStatuses}
+                    status={status}
+                    setStatus={setStatus}
+                />
+            )}
+
+            {props.customerList && (
+                <AdminpanelCustomerList
+                    adminAgentData={props.adminAgentData}
+                    rates={rates}
+                    setRates={setRates}
+                    rate={rate}
+                    setRate={setRate}
+                    dates={dates}
+                    setDates={setDates}
+                    date={date}
+                    setDate={setDate}
+                    vehicleTypes={vehicleTypes}
+                    setVehicleTypes={setVehicleTypes}
+                    vehicleType={vehicleType}
+                    setVehicleType={setVehicleType}
+                    pageNumbers={pageNumbers}
+                    setPageNumbers={setPageNumbers}
+                    pageNumber={pageNumber}
+                    setPageNumber={setPageNumber}
+                    activePagenumber={activePagenumber}
+                    setActivePagenumber={setActivePagenumber}
+                    citiesFrom={citiesFrom}
+                    setCitiesFrom={setCitiesFrom}
+                    cityFrom={cityFrom}
+                    setCityFrom={setCityFrom}
+                    citiesTo={citiesTo}
+                    setCitiesTo={setCitiesTo}
+                    cityTo={cityTo}
+                    setCityTo={setCityTo}
+                    statuses={statuses}
+                    setStatuses={setStatuses}
+                    status={status}
+                    setStatus={setStatus}
+                />
+            )}
+
+            {props.brokerList && (
+                <AdminpanelBrokerList
+                    adminAgentData={props.adminAgentData}
+                    dates={dates}
+                    setDates={setDates}
+                    date={date}
+                    setDate={setDate}
+                    pageNumbers={pageNumbers}
+                    setPageNumbers={setPageNumbers}
+                    pageNumber={pageNumber}
+                    setPageNumber={setPageNumber}
+                    activePagenumber={activePagenumber}
+                    setActivePagenumber={setActivePagenumber}
+                />
+            )}
+            <Logout
+                logout={props.logout}
+                setLogout={props.setLogout}
+            />
+        </>
+    )
+}

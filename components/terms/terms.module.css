@@ -1,0 +1,16 @@
+.termsMobileTopBg {
+  background: no-repeat url('../../public/img/termsandconditionbg.png');
+}
+.termsDesktopTopBg {
+  background: no-repeat url('../../public/img/termsandconditionbg.png');
+}
+.list {
+  position: relative;
+  list-style: none;
+}
+.list:before {
+  content: '*';
+  position: absolute;
+  left: -15px;
+  bottom: 14px;
+}

@@ -1,0 +1,19 @@
+.transferLinks:hover {
+    background-color: #D8EEBE;
+}
+
+.searchInput {
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    max-height: 30px;
+}
+
+.searchInput:focus {
+    outline: none;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}

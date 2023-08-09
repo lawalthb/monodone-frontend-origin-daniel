@@ -1,0 +1,15 @@
+{
+    "website_data": [
+        {
+            "totalUsers": "247 000",
+            "totalAgents": "4000",
+            "totalDrivers": "1000",
+            "totalTransportCompanies": "700",
+            "totalShippingCompanies": "4500",
+            "totalBrokers": "700",
+            "totaVisitors": "7000",
+            "totaDriverManagers": "250",
+            "totalCustomers": "7000"
+        }
+    ]
+}

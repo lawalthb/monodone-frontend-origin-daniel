@@ -1,0 +1,29 @@
+.activeNavItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  color: #151515;
+  font-size: 12px;
+  font-weight: 500;
+  padding-right: 30px;
+  padding-right: 30px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border: 0.5px solid rgba(0, 0, 0, 0.04);
+  border-radius: 6px;
+  border-color: rgba(0, 0, 0, 0.04);
+  text-align: center;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12), 0px 3px 1px rgba(0, 0, 0, 0.04);
+}
+.notActiveNavItem {
+  background-color: #eeeeef;
+  color: #a6a6a6;
+  font-size: 12px;
+  font-weight: 500;
+  padding-right: 30px;
+  padding-right: 30px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+}

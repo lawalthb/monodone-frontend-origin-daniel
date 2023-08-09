@@ -1,0 +1,321 @@
+/* @media screen and (min-width: 300px){
+    .dashboard{
+        display: flex;
+        background-color: white;
+       
+    }
+    .homecontainer{
+        background-color: white;
+        width: 80%;
+    }
+    .buttons{
+       margin-top: 150px;
+       margin-left: -75px; 
+    }
+    .listcontainer{
+        margin-top: 50px;
+        margin-left: -90px;
+        width: 400px;
+    }
+    .filter{
+        display: flex;
+        width:100px;
+        height: 60px;
+        background-color: white;
+        border: 0.5px solid lightgray;
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-left: -10px;
+    }
+    .filtericon{
+        font-size: 20px;
+        margin-top: 10px;
+        margin-left: 15px;
+    }
+    .filterhere{
+        margin-top: 8px;
+        margin-left: 4px;
+    }
+    .load{
+        display: flex;
+        width:150px;
+        background-color: white;
+        border: 0.5px none lightgray;
+        border-radius: 5px;
+        margin-top: -40px;
+        margin-left: 100px;
+        color: green;
+    }
+    .loadicon{
+        display: flex;
+        font-size: 50px;
+        margin-top: -10px;
+        margin-left: 5px;
+    }
+    .viewload{
+        display: flex;
+        width: 300px;
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+    .add{
+        display: flex;
+        width: 125px;
+        height: 50px;
+        background-color: white;
+        border: 0.5px solid green;
+        border-radius: 5px;
+        margin-top: -60px;
+        margin-left: 280px;
+        color: green;
+    }
+    .addicon{
+        display: flex;
+        font-size: 20px;
+        margin-top: 15px;
+        margin-left: 5px;
+        
+    }
+    .addadmin{
+        display: flex;
+        margin-top: 10px;
+        margin-left: 6px;
+    }
+    .hideBtn{
+        display: none;
+    }
+    
+    
+} */
+
+
+    .homecontainer{
+        background-color: white;
+        width: 90%;
+    }
+    /* .filter{
+        margin-left: 610px;
+    } */
+    .buttons{
+        display:flex;
+        gap: 2rem;
+        margin-top: 0px;
+    }
+    .listcontainer{
+        margin-top: 0px;
+        margin-left: 0px;
+        width: 457px;
+    }
+    .filter{
+        text-align: center;
+        background-color: white;
+        border: 1px solid rgba(209, 209, 209, 1);
+        width: 127px;
+        height: 40px;
+        border-radius: 6px;
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+    }
+    .hideBtn{
+        visibility: hidden;
+    }
+    .filter:hover{
+        color:rgba(0, 144, 47, 1)
+    }
+
+    .filtericon{
+        width: 16px;
+        height: 16px;
+        color: rgba(21, 21, 21, 1);
+    }
+    
+    .filterhere{
+        margin: 0;
+        font-family: Poppins;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0.20000000298023224px;
+        text-align: left;
+        color: rgba(21, 21, 21, 1);
+    }
+    .load{
+        text-align: center;
+        background-color: white;
+        color: rgba(0, 144, 47, 1);
+        height: 40px;
+        border: none;
+        outline: none;
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+    }
+    .load:hover{
+        color:green
+    }
+    .loadicon{
+       width: 24px;
+       height: 24px;
+       color: rgba(0, 144, 47, 1);
+    }
+    .viewload{
+        text-decoration: none;
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: rgba(0, 144, 47, 1) !important;
+
+    }
+    .add{
+        text-align: center;
+        background-color: white;
+        border: 1px solid rgba(0, 144, 47, 1);
+        color: rgba(0, 144, 47, 1);
+        width: 127px;
+        height: 40px;
+        border-radius: 6px;
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+
+    }
+    .add:hover{
+        color: green
+    }
+    .addicon{
+        width: 14px;
+        height: 14px;
+        margin: 0;
+    }
+    .addadmin{
+        font-family: Poppins;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0.10000000149011612px;
+        text-align: left;
+        margin: 0;
+    }
+    .container{
+        background-image: url("/img/bluebackground.jpg");
+        height: 150px;
+        width: 950px;
+        margin-top: 20px;
+        margin-left: 90px;
+        border-radius: 20px;
+    }
+    .listcontainer{
+        -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+        box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+        padding: 20px;
+        margin: 20px;
+    }
+    .totrevenue{
+        color: white;
+        margin-left: 40px;
+        padding-top: 20px;
+    }
+    .amount{
+        color: white;
+        margin-left: 40px;
+        margin-top: -13px;
+        font-size: 25px;
+        font-weight: 600;
+    }
+    .id{
+        color: white;
+        margin-left: 40px;
+        margin-top: -5px;
+    }
+    .date{
+        color: white;
+    }
+    
+    .sort{
+        display: none;
+    }
+
+
+@media screen and (max-width: 768px){
+    .filter{
+        width: fit-content;
+        height: 32px;
+        padding: 5px;
+    }
+
+    .load{
+        display: none;
+    }
+
+    .buttons{
+        justify-content: space-between;
+    }
+
+    .filterhere{
+        font-size: 10px;
+    }
+
+    .add{
+        display: none;
+    }
+
+    .sort{
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .sort > h6{
+        margin: 0;
+        font-family: Poppins;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: rgba(166, 166, 166, 1);
+    }
+
+    .sortinput{
+        /* width: 127px; */
+        height: 32px;
+        border: 0.5px solid rgba(231, 231, 231, 1);
+        border-radius: 4px;
+        padding: 1px 30px 2px 6px;
+        font-family: Poppins;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: rgba(21, 21, 21, 1);
+    }
+
+    .absolute{
+        position: absolute;
+    }
+}
+
+/* @media screen and (min-width: 800px){
+    .buttons{
+        display:flex;
+        margin-left: 555px;
+    }
+    .listcontainer{
+        margin-top: 35px;
+        margin-left: 35px;
+        width: 1057px;
+    }
+
+} */
